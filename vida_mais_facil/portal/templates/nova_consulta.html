@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <main class="consulta">
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Salvar</button>
+            <a href="{% url 'dashboard' %}">Cancelar</a>
+        </form>
+    </main>
+{% endblock %}

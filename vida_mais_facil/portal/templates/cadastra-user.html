@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá Seja Bem-vindo! | Vida + Fácil</title>
+</head>
+<body>
+    <main class="cad-user" enctype="multipart/form-data">
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Cadastrar-se</button> 
+            <a href="{% url 'login' %}">Já tem uma conta? Entre</a>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<aside class="consulta">
+    {% for atendimento in atendimentos %}
+        <h1>{{ atendimento.titulo }} <span>{{ atendimento.get_emergencia_display }}</span></h1>
+        <h3>{{ atendimento.get_medico_display }} <span>{{ atendimento.especialidade }}</span></h3>
+        <p>{{ atendimento.data_agendamento }} <span> {{ atendimento.hora_agendamento }}</span></p>
+        <p>{{ atendimento.observacao }}</p>
+    {% empty %}
+        <h1>Sem atendiementos</h1>
+    {% endfor %}
+</aside>
+{% endblock %}

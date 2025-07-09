@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Vida + Fácil</title>
+</head>
+<body>
+    <section class="sidebar">
+        <div class="user">
+            <div class="user-infos">
+                <img src="{{ user.foto_perfil.url }}">
+            </div>
+            <div class="user-infos-txt">
+                <h1>Olá, {{ request.user.p_nome }}!</h1>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'nova-consulta' %}">Nova Consulta</a></li>
+                <li><a href="">Saúde</a></li>
+                <li><a href="">Conteúdo Educativo</a></li>
+                <li><a href="">Perfil</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    {% block conteudo %}
+    {% endblock %}
+</body>
+</html>
