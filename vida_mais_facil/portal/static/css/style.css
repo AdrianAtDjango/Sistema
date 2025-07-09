@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Geist", sans-serif;
+}
+
+body {
+  display: flex;
+}
+
+.conteudo {
+  padding: 20px;
+  width: 100%;
+}
+
+.sidebar {
+  padding-inline: 30px;
+  background-color: #fafafa;
+  border-right: solid 1px #c5c5c5;
+  height: 100vh;
+}
+.sidebar .logo {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+.sidebar .logo img {
+  height: 40px;
+  width: auto;
+}
+.sidebar .navbar ul {
+  list-style: none;
+}
+.sidebar .navbar ul li {
+  width: 250px;
+  margin-block: 15px;
+  padding: 15px;
+  border-radius: 1rem;
+}
+.sidebar .navbar ul li:hover {
+  background-color: #e3ffee;
+  outline: 1px solid #2ecc71;
+  cursor: pointer;
+}
+.sidebar .navbar ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 22px;
+  color: #0a0a0a;
+}
+.sidebar .navbar ul li a svg {
+  margin-right: 15px;
+  height: 30px;
+  width: auto;
+}
+.sidebar .navbar ul li a svg path {
+  fill: #0a0a0a;
+}
+
+.saude {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.saude .infos {
+  background-color: #fafafa;
+  outline: 1px solid #c5c5c5;
+  min-width: 250px;
+  padding: 20px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.saude .infos .infos-txt h1 {
+  font-size: 15px;
+}
+.saude .infos .infos-txt h2 {
+  font-size: 40px;
+  margin-top: 10px;
+}
+.saude .infos .infos-txt p {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #737373;
+}
+.saude .infos .icon {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.saude .infos .icon svg {
+  width: 22px;
+  height: 22px;
+}
+.saude .infos #cardiaca {
+  background-color: #ffbbbe;
+}
+.saude .infos #cardiaca svg > path {
+  fill: #ff2b2f;
+}
+.saude .infos #glicemia {
+  background-color: #d4e5ff;
+}
+.saude .infos #glicemia svg > path {
+  fill: #5bc0eb;
+}
+.saude .infos #peso {
+  background-color: #e0baff;
+}
+.saude .infos #peso svg > path {
+  fill: #9b5de5;
+}
+.saude .infos #pressao {
+  background-color: #baffba;
+}
+.saude .infos #pressao svg > path {
+  fill: #2ecc71;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h1>Você tem certeza que quer deletar a consulta '{{ atendimento.titulo }}'?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Deletar</button>
+        <a href="{% url 'dashboard' %}">Voltar à Dashboard</a>
+    </form>
+{% endblock %}

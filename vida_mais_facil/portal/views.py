@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login as auth_login
 from django.contrib import messages
 from .models import *
@@ -53,11 +53,38 @@ def dashboard(request):
     context = {'atendimentos': atendimentos}
     return render(request, 'dashboard.html', context)
 
+def visualizar_saude(request):
+    registros = RegistroSaude.objects.all()
+    context = {'registros': registros}
+    return render(request, 'saude.html', context)
+
 def nova_consulta(request):
     form = AtendimentoForm(request.POST)
     if form.is_valid():
         form.save()
         return redirect('dashboard')
 
+    context = {'form': form}
+    return render(request, 'nova_consulta.html', context)
+
+def deletar_consulta(request, id):
+    atendimento = get_object_or_404(Atendimento, id=id)
+    if request.method == 'POST':
+        atendimento.delete()
+        return redirect('dashboard')
+
+    context = {'atendimento': atendimento}
+    return render(request, 'deleta_consulta.html', context)
+
+def editar_consulta(request, id):
+    atendimento = get_object_or_404(Atendimento, id=id)
+    if request.method == 'POST':
+        form = AtendimentoForm(request.POST, instance=atendimento)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+    else:
+        form = AtendimentoForm(instance=atendimento)
+    
     context = {'form': form}
     return render(request, 'nova_consulta.html', context)

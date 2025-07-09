@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+$texts: #0a0a0a;
+$subtitles: #737373;
+$backgorund: #fafafa;
+$foregroung: #fafafa;
+$item: #fafafa;
+$stroke: #c5c5c5;
+
+$primary: #2ecc71;
+$hover: #e3ffee;
+
+
+$small: #5bc0eb;
+$medium: #ffa552;
+$high: #ff2b2f;
+$urgent: #9b5de5;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Geist", sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+.conteudo {
+    padding: 20px;
+    width: 100%;
+}
+
+.sidebar {
+    padding-inline: 30px;
+    background-color: $foregroung;
+    border-right: solid 1px $stroke;
+    height: 100vh;
+    .logo {
+        margin-top: 50px;
+        margin-bottom: 25px;
+        img{
+            height: 40px;
+            width: auto;
+        }
+    }
+    .navbar {
+        ul {
+            list-style: none;
+            li {
+                width: 250px;
+                margin-block: 15px;
+                padding: 15px;
+                border-radius: 1rem;
+                &:hover {
+                    background-color: $hover;
+                    outline: 1px solid $primary;
+                    cursor: pointer;
+                }
+                a {
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    font-size: 22px;
+                    color: $texts;
+                    svg {
+                        margin-right: 15px;
+                        height: 30px;
+                        width: auto;
+                        path {
+                            fill: $texts;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.saude {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 25px;
+    .infos{
+        background-color: $foregroung;
+        outline: 1px solid $stroke;
+        min-width: 250px;
+        padding: 20px;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: space-between;
+        .infos-txt {
+            h1 {
+                font-size: 15px;
+            }
+            h2 {
+                font-size: 40px;
+                margin-top: 10px;
+            }
+            p {
+                margin-top: 25px;
+                font-size: 12px;
+                color: $subtitles;
+            }
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            padding: 4px;
+            border-radius: 9999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        
+        #cardiaca {
+            background-color: #ffbbbe;
+            svg > path {
+                fill: $high;
+            }
+        }
+
+        #glicemia {
+            background-color: #d4e5ff;
+            svg > path {
+                fill: $small;
+            }
+        }
+
+        #peso {
+            background-color: #e0baff;
+            svg > path {
+                fill: $urgent;
+            }
+        }
+
+        #pressao {
+            background-color: #baffba;
+            svg > path {
+                fill: $primary;
+            }
+        }
+    }
+}
